@@ -5,7 +5,7 @@
 In this testing framework, we use a configuration file to store the necessary settings for our API tests, 
 such as the base URL and authentication token. 
 
-## Configuration File
+### Configuration File
 We use a YAML file format for our configuration file. YAML is a human-readable data serialization format that 
 is easy to read and edit. 
 
@@ -22,7 +22,7 @@ token: my_api_token
 ```
 
 
-## Configuration Classes
+### Configuration Classes
 
 We have two main classes for handling the configuration settings:
 
@@ -38,3 +38,29 @@ The ConfigurationLoader class is responsible for loading the configuration setti
 - `getInstance()`: Returns the instance of ConfigurationLoader. If an instance doesn't already exist, it creates one and loads the configuration settings.
 - `loadConfiguration()`: Private method that loads the configuration settings from the config.yaml file and sets the Configuration instance. It also validates the presence of the base_url and token properties in the file.
 - `getConfiguration()`: Returns the Configuration instance.
+
+## RestClient
+
+RestClient is a utility class that simplifies making API requests using Rest Assured. It provides a set of static 
+methods for sending HTTP requests, such as GET, POST, PUT, PATCH, and DELETE. The main goal of this class is to 
+abstract away the Rest Assured usage details, making it easier to manage API calls and handle common tasks like 
+authentication.
+
+### Methods
+
+RestClient provides the following static methods for sending HTTP requests:
+
+- `get`(String url, Map<String, ?> queryParams, String token): Sends a GET request to the specified URL with optional query parameters and an optional Bearer token for authentication.
+- `post`(String url, Map<String, ?> queryParams, Object body, String token): Sends a POST request to the specified URL with optional query parameters, a request body, and an optional Bearer token for authentication.
+- `put`(String url, Map<String, ?> queryParams, Object body, String token): Sends a PUT request to the specified URL with optional query parameters, a request body, and an optional Bearer token for authentication.
+- `patch`(String url, Map<String, ?> queryParams, Object body, String token): Sends a PATCH request to the specified URL with optional query parameters, a request body, and an optional Bearer token for authentication.
+- `delete`(String url, Map<String, ?> queryParams, String token): Sends a DELETE request to the specified URL with optional query parameters and an optional Bearer token for authentication.
+
+Notes
+
+- The RestClient methods use Rest Assured to send HTTP requests and handle responses.
+
+- The url parameter should include the base URL and the API endpoint.
+- The queryParams parameter is a map of query parameters to be included in the request. If no query parameters are needed, pass null.
+- The body parameter is used for POST, PUT, and PATCH requests and should contain the request payload (e.g., a JSON object). The payload can be a Java object, Map, or String.
+- The token parameter is optional and should be used when authentication is required. If a token is provided, it will be included in the Authorization header as Bearer <token>. If no token is required, pass null.
