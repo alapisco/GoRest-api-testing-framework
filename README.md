@@ -18,34 +18,34 @@ Refer to the [Tests Section](#tests) for full details on how those testcases are
 ## Table of Contents
 
 1. [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installing](#installing)
-    - [Running the test](#running-the-tests)
-    - [Test Results](#tests-results)
+   - [Prerequisites](#prerequisites)
+   - [Installing](#installing)
+   - [Running the test](#running-the-tests)
+   - [Test Results](#tests-results)
 2. [Dependencies](#dependencies)
 3. [API Testing Framework Design](#api-testing-framework-design)
-    - [API Configuration Properties](#api-configuration-properties)
-        - [Configuration class](#configuration)
-        - [Configuration Loader](#configuration)
-    - [RestAssured Configuration](#restassured-configuration)
-        - [RestAssuredConfigurationManager](#restassuredconfigmanager)
-    - [API Models](#api-models)
-        - [Post](#post-model)
-        - [User](#user-model)
-    - [Utilities](#utilities)
-        - [JsonDataReader](#jsondatareader)
-        - [UniqueEmailGenerator](#uniqueemailgenerator)
-    - [Tests]()
-        - [BaseTest class](#basetest)
-        - [PostTests](#poststests)
-        - [UsersTests](#userstests)
-        - [UserPaginationTests](#userpaginationtests)
-        - [UsersTests](#usersearchtests)
-    - [CI/CD Pipeline](#cicd-pipeline)
-        - [GitHub Actions Configuration](#github-actions-configuration)
-        - [Test Execution Reports](#test-execution-reports)
-            - [Junit Reports](#junit-reports)
-            - [Allure Reports](#allure-reports)
+   - [API Configuration Properties](#api-configuration-properties)
+      - [Configuration class](#configuration)
+      - [Configuration Loader](#configuration)
+   - [RestAssured Configuration](#restassured-configuration)
+      - [RestAssuredConfigurationManager](#restassuredconfigmanager)
+   - [API Models](#api-models)
+      - [Post](#post-model)
+      - [User](#user-model)
+   - [Utilities](#utilities)
+      - [JsonDataReader](#jsondatareader)
+      - [UniqueEmailGenerator](#uniqueemailgenerator)
+   - [Tests]()
+      - [BaseTest class](#basetest)
+      - [PostTests](#poststests)
+      - [UsersTests](#userstests)
+      - [UserPaginationTests](#userpaginationtests)
+      - [UsersTests](#usersearchtests)
+   - [CI/CD Pipeline](#cicd-pipeline)
+      - [GitHub Actions Configuration](#github-actions-configuration)
+      - [Test Execution Reports](#test-execution-reports)
+         - [Junit Reports](#junit-reports)
+         - [Allure Reports](#allure-reports)
 
 ## Getting Started
 
@@ -295,7 +295,7 @@ will be deployed to `Github Pages`. This report contains screenshots of all the 
 test execution data.
 
 To see the test results from the latest run go to:
-[https://alapisco.github.io/sauce-test](https://alapisco.github.io/sauce-test)
+[https://alapisco.github.io/GoRest-api-testing-framework/2/](https://alapisco.github.io/GoRest-api-testing-framework)
 
 
 #### GitHub Actions Configuration
@@ -314,17 +314,16 @@ Allure reports are deployed to the Github Pages of the reporitory
 
 To see all the executions, go to the `Actions` section of the repository:
 
-[https://github.com/alapisco/sauce-test/actions](https://github.com/alapisco/sauce-test/actions)
+[https://github.com/alapisco/GoRest-api-testing-framework/actions](https://github.com/alapisco/GoRest-api-testing-framework/actions)
 
-In the `Workflows` section, on the left, select `UI Tests`. This is the flow that runs the workflows
-that run the chrome and firefox tests.
+In the `Workflows` section, on the left, select `API Tests`.
 
-On the left menu, at the `Jobs` section you will see `run-ui-tests-chrome` and  `run-ui-tests-firefox`
+Click on the run you want to check
 
-Click on each of them, and click the `build` section that will be expanded
+Click the `build` section on the left
 
 On the right it will show the output of all the steps.
-- Expand  `Run chrome tests` or `Run firefox tests` to see the output of the `mvn` command that runs the tests
+- Expand  `Run API tests` to see the output of the `mvn` command that runs the tests
 - Expand `Report URL` to see where the `Allure report` is available
 
 On the left you will see the `Summary` section that will show junit test results in the `Build Summary`
