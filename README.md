@@ -64,3 +64,17 @@ Notes
 - The queryParams parameter is a map of query parameters to be included in the request. If no query parameters are needed, pass null.
 - The body parameter is used for POST, PUT, and PATCH requests and should contain the request payload (e.g., a JSON object). The payload can be a Java object, Map, or String.
 - The token parameter is optional and should be used when authentication is required. If a token is provided, it will be included in the Authorization header as Bearer <token>. If no token is required, pass null.
+
+## Utilities
+
+### JsonDataReader 
+
+This utility class helps read test data from a JSON file. This utility uses the Jackson library to map JSON data to Java objects.
+
+- Read JSON data from a file.
+- Deserialize JSON data into Java objects.
+
+### UniqueEmailGenerator
+
+The UniqueEmailGenerator utility class generates unique email addresses for use in tests. This utility ensures that each email address created during test execution is unique to prevent conflicts when testing API endpoints that require unique email addresses.
+
